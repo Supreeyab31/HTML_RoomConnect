@@ -92,11 +92,7 @@ This project expanded my capability as a Data Analyst to think holistically abou
 
 To run RoomConnect locally on your machine:
 
-1. **Clone or Download the Repository:**
-   ```bash
-   git clone https://github.com/your-username/roomconnect.git
-   cd roomconnect
-   ```
+1. **Clone or Download the Repository**
 
 2. **Open in Browser:**
    - Double-click `index.html` to launch directly in any modern browser (Chrome, Edge, Firefox).
