@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="RoomConnect quiz, WFI roommate compatibility, WG matching">
+    <title>RoomConnect | Quiz and Roommate Match</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+        <a class="navbar-brand brand-mark" href="index.html">
+            <img src="roomconnect_nav.svg" alt="RoomConnect logo" class="brand-logo-full">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <div class="navbar-nav ms-auto align-items-lg-center">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link active" href="quiz.html">Quiz</a>
+                <a class="nav-link" href="lessons.php">Shared Dashboard</a>
+                <a class="nav-link" href="trust-safety.html">Trust</a>
+                <a class="nav-link" href="pricing.html">Pricing</a>
+                <a class="nav-link" href="about.html">About</a>
+                <div class="nav-user-inline ms-lg-3 mt-3 mt-lg-0">
+                    <span class="nav-user-dot"></span>
+                    <span class="nav-user-inline-name" id="navUserName">Guest</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="section-padding bg-soft min-vh-100">
+    <div class="container">
+        <div class="content-card">
+
+            <span class="badge trust-badge mb-3">Milestone 2: Quiz and roommate matching</span>
+
+            <h1>Roommate Quiz</h1>
+
+            <div id="formAlert" class="alert alert-danger d-none" role="alert"></div>
+
+            <form id="quizForm" class="mt-2" novalidate>
+
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label for="name" class="form-label">Your name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="e.g. Anna" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="university" class="form-label">University</label>
+                        <input type="text" class="form-control" id="university" name="university" placeholder="KU or THI" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="email" class="form-label">Student email</label>
+                        <input type="email" class="form-control" id="email" name="email"
+                            placeholder="name@stud.ku.de or name@thi.de" required>
+                    </div>
+                </div>
+
+                <hr class="my-5">
+
+                <fieldset>
+                    <legend class="form-section-title">Lifestyle Questions</legend>
+                    <p class="text-muted">Just pick what fits you best</p>
+
+                    <div class="slider-card">
+                        <label class="form-label" for="cleanliness">Cleanliness</label>
+                        <select class="form-select" id="cleanliness" name="cleanliness">
+                            <option value="1">Very relaxed</option>
+                            <option value="2">Slightly organized</option>
+                            <option value="3" selected>Average</option>
+                            <option value="4">Very tidy</option>
+                            <option value="5">Extremely clean</option>
+                        </select>
+                    </div>
+
+                    <div class="slider-card">
+                        <label class="form-label" for="communication">How do you handle disagreements?</label>
+                        <select class="form-select" id="communication" name="communication">
+                            <option value="1">Talk immediately</option>
+                            <option value="2">Calm discussion later</option>
+                            <option value="3">Avoid confrontation</option>
+                            <option value="4">Prefer calling</option>
+                            <option value="5">Prefer texting</option>
+                        </select>
+                    </div>
+
+                    <div class="slider-card">
+                        <label class="form-label" for="sleep">Sleep schedule</label>
+                        <select class="form-select" id="sleep" name="sleep">
+                            <option value="1">Early sleeper (before 10 pm)</option>
+                            <option value="2">Mostly early</option>
+                            <option value="3" selected>Flexible</option>
+                            <option value="4">Late sleeper</option>
+                            <option value="5">Night owl (after 1 am)</option>
+                        </select>
+                    </div>
+
+                    <div class="slider-card">
+                        <label class="form-label" for="friends">How often do you have friends over?</label>
+                        <select class="form-select" id="friends" name="friends">
+                            <option value="1">Almost never</option>
+                            <option value="2">Rarely</option>
+                            <option value="3">Sometimes</option>
+                            <option value="4" selected>Often</option>
+                            <option value="5">Very often / parties</option>
+                        </select>
+                    </div>
+
+                    <div class="slider-card">
+                        <label class="form-label" for="smoking">Smoking</label>
+                        <select class="form-select" id="smoking" name="smoking">
+                            <option value="1">Non-smoker</option>
+                            <option value="2">OK with smoking outside</option>
+                            <option value="3">Smoker</option>
+                        </select>
+                    </div>
+
+                    <div class="slider-card">
+                        <label class="form-label" for="environment">Home environment</label>
+                        <select class="form-select" id="environment" name="environment">
+                            <option value="1">Very quiet</option>
+                            <option value="2">Mostly quiet</option>
+                            <option value="3" selected>Balanced</option>
+                            <option value="4">Some background noise</option>
+                            <option value="5">Lively / social</option>
+                        </select>
+                    </div>
+
+                    <div class="slider-card">
+                        <label class="form-label" for="study">Study / work style</label>
+                        <select class="form-select" id="study" name="study">
+                            <option value="1">Complete silence</option>
+                            <option value="2">Prefer quiet</option>
+                            <option value="3" selected>Flexible</option>
+                            <option value="4">Background noise OK</option>
+                            <option value="5">Study together</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <div class="mt-4 p-3 bg-light rounded">
+                    <h4 class="h5 mb-2">How your score is calculated</h4>
+                    <ul class="small mb-0">
+                        <li>Cleanliness — 15%</li>
+                        <li>Sleep schedule — 15%</li>
+                        <li>Communication — 10%</li>
+                        <li>Social preference — 15%</li>
+                        <li>Smoking — 15%</li>
+                        <li>Environment — 15%</li>
+                        <li>Study style — 15%</li>
+                    </ul>
+                </div>
+
+                <button type="submit" class="btn btn-teal btn-lg mt-4" id="submitBtn">
+                    Submit Quiz &amp; Find Match
+                </button>
+            </form>
+
+            <div id="scoreResult" class="mt-5 d-none">
+                <h2>Your Results</h2>
+                <div class="p-4 bg-light rounded mb-3">
+                    <h3 id="scoreText" class="h4 mb-2"></h3>
+                    <p id="rankingText" class="mb-1"></p>
+                    <p id="bestMatchText" class="fw-semibold mb-0"></p>
+                </div>
+                <h4 class="h6">Your answers (1 = low, 5 = high)</h4>
+                <ul id="profileSummary" class="small text-muted"></ul>
+                <p class="text-muted small">Tip: change any answer to update your score.</p>
+            </div>
+
+            <section id="resultsFeed" class="results-feed mt-4 d-none">
+                <h2>Suggested Roommates</h2>
+                <div id="primaryMatchContainer" class="mb-4"></div>
+                <div id="allMatchesGrid" class="roommate-results-grid"></div>
+            </section>
+
+            <section id="rejectedState" class="mt-5 d-none">
+                <div class="alert alert-warning mb-4">
+                    <strong>Match declined.</strong>
+                    This roommate is no longer available or has declined the match request.
+                    Please choose someone else below.
+                </div>
+                <h3>Try these roommates instead</h3>
+                <div id="alternativesGrid" class="roommate-results-grid"></div>
+            </section>
+
+            <section id="acceptedState" class="accepted-state mt-5 d-none">
+                <div class="alert alert-success">
+                    <strong>Match accepted!</strong>
+                    You and your roommate are confirmed. Continue to the shared dashboard
+                    to pick a room together.
+                </div>
+                <form id="dashboardForm" action="lessons.php" method="post">
+                    <input type="hidden" name="name" id="dashboardName">
+                    <input type="hidden" name="university" id="dashboardUniversity">
+                    <input type="hidden" name="email" id="dashboardEmail">
+                    <input type="hidden" name="cleanliness" id="dashboardCleanliness">
+                    <input type="hidden" name="communication" id="dashboardCommunication">
+                    <input type="hidden" name="friends" id="dashboardFriends">
+                    <input type="hidden" name="smoking" id="dashboardSmoking">
+                    <input type="hidden" name="sleep" id="dashboardSleep">
+                    <input type="hidden" name="environment" id="dashboardEnvironment">
+                    <input type="hidden" name="study" id="dashboardStudy">
+                    <input type="hidden" name="matched_roommate" id="dashboardRoommate">
+                    <button type="submit" class="btn btn-teal btn-lg">Open Shared Dashboard</button>
+                </form>
+            </section>
+
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>RoomConnect mockup for Digital Business Models &amp; Technologies.</p>
+    </div>
+</footer>
+
+<script>
+(() => {
+    "use strict";
+
+    // =========================================================================
+    // SCORING MATRIX — maps quiz answers to numbers & finds best match
+    // =========================================================================
+
+    const PROFILE_KEYS = ["cleanliness", "sleep", "communication", "social", "smoking", "environment", "study"];
+
+    const COMMUNICATION_SCORES = { immediate: 5, later: 4, text: 2 };
+    const SMOKING_SCORES = { no_smoker: 1, outside_ok: 3, smoker: 5 };
+    const STUDY_SCORES = { silence: 1, quiet: 2, flexible: 3, background: 4, joint: 5 };
+
+    const MOCK_ROOMMATES = [
+        {
+            id: "christian",
+            name: "Christian",
+            initials: "CH",
+            tags: ["Email verified", "Clean kitchen", "Quiet weekdays"],
+            summary: "Tidy, early sleeper — great if you like a calm, organised flat.",
+            scores: { cleanliness: 5, sleep: 2, communication: 4, social: 2, smoking: 1, environment: 2, study: 3 },
+            acceptChance: 0.85
+        },
+        {
+            id: "julia",
+            name: "Julia",
+            initials: "JU",
+            tags: ["Email verified", "Early sleeper", "No parties"],
+            summary: "Very quiet lifestyle — ideal for focused study weeks.",
+            scores: { cleanliness: 4, sleep: 1, communication: 5, social: 1, smoking: 1, environment: 1, study: 2 },
+            acceptChance: 0.9
+        },
+        {
+            id: "max",
+            name: "Max",
+            initials: "MX",
+            tags: ["Email verified", "Social flat", "Late nights"],
+            summary: "Outgoing and lively — best if you enjoy guests and late evenings.",
+            scores: { cleanliness: 2, sleep: 5, communication: 2, social: 5, smoking: 3, environment: 5, study: 4 },
+            acceptChance: 0.4
+        },
+        {
+            id: "lena",
+            name: "Lena",
+            initials: "LE",
+            tags: ["Email verified", "Balanced WG", "Shared cooking"],
+            summary: "Flexible and easy-going — a safe middle-ground match for most students.",
+            scores: { cleanliness: 3, sleep: 3, communication: 4, social: 3, smoking: 1, environment: 3, study: 3 },
+            acceptChance: 0.8
+        }
+    ];
+
+    const PROFILE_LABELS = {
+        cleanliness: "Cleanliness",
+        sleep: "Sleep schedule",
+        communication: "Communication",
+        social: "Social / friends",
+        smoking: "Smoking",
+        environment: "Home environment",
+        study: "Study style"
+    };
+
+    function buildUserProfile() {
+        const communicationRaw = document.getElementById("communication").value;
+        const smokingRaw = document.getElementById("smoking").value;
+        const studyRaw = document.getElementById("study").value.toLowerCase();
+
+        return {
+            cleanliness: Number(document.getElementById("cleanliness").value),
+            sleep: Number(document.getElementById("sleep").value),
+            communication: COMMUNICATION_SCORES[communicationRaw] ?? 3,
+            social: Number(document.getElementById("friends").value),
+            smoking: SMOKING_SCORES[smokingRaw] ?? 3,
+            environment: Number(document.getElementById("environment").value),
+            study: STUDY_SCORES[studyRaw] ?? 3
+        };
+    }
+
+    function calculateQuizScore(profile) {
+        let score = 0;
+        score += (profile.cleanliness / 5) * 25;
+        score += ((6 - profile.sleep) / 5) * 20;
+        score += profile.communication >= 4 ? 20 : 10;
+        score += (profile.social / 5) * 15;
+        score += profile.smoking === 1 ? 10 : 5;
+        score += profile.study <= 2 ? 10 : 7;
+        return Math.round(score);
+    }
+
+    function calculateMatchPercent(userProfile, roommateScores) {
+        let sumSquaredDiff = 0;
+
+        PROFILE_KEYS.forEach((key) => {
+            const userVal = userProfile[key] ?? 3;
+            const roommateVal = roommateScores[key] ?? 3;
+            const diff = userVal - roommateVal;
+            sumSquaredDiff += diff * diff;
+        });
+
+        const maxDistance = Math.sqrt(PROFILE_KEYS.length * 16);
+        const distance = Math.sqrt(sumSquaredDiff);
+        return Math.max(0, Math.min(100, Math.round((1 - distance / maxDistance) * 100)));
+    }
+
+    function rankRoommates(userProfile, excludeIds = []) {
+        return MOCK_ROOMMATES
+            .filter((r) => !excludeIds.includes(r.id))
+            .map((roommate) => ({
+                ...roommate,
+                matchPercent: calculateMatchPercent(userProfile, roommate.scores)
+            }))
+            .sort((a, b) => b.matchPercent - a.matchPercent);
+    }
+
+    function getRankingLabel(percent) {
+        if (percent >= 90) return "Excellent match";
+        if (percent >= 75) return "Good match";
+        if (percent >= 60) return "Average match";
+        return "Low match — try adjusting your answers or pick another roommate";
+    }
+
+    function simulateRoommateResponse(roommate, matchPercent) {
+        if (matchPercent >= 78) return "ACCEPTED";
+        if (matchPercent < 50) return "REJECTED";
+        return Math.random() < roommate.acceptChance ? "ACCEPTED" : "REJECTED";
+    }
+
+    function setCookie(name, value, days = 30) {
+        const expires = new Date(Date.now() + days * 86400000).toUTCString();
+        document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
+    }
+
+    function saveSessionCookies(userProfile, roommateName, matchPercent) {
+        setCookie("roomconnect_name", document.getElementById("name").value.trim());
+        setCookie("roomconnect_university", document.getElementById("university").value.trim());
+        setCookie("roomconnect_email", document.getElementById("email").value.trim());
+        setCookie("roomconnect_roommate", roommateName);
+        setCookie("roomconnect_match_score", String(matchPercent));
+        setCookie("roomconnect_profile", JSON.stringify(userProfile));
+    }
+
+    function copyQuizDataToDashboard(roommateName) {
+        document.getElementById("dashboardName").value = document.getElementById("name").value.trim();
+        document.getElementById("dashboardUniversity").value = document.getElementById("university").value.trim();
+        document.getElementById("dashboardEmail").value = document.getElementById("email").value.trim();
+        document.getElementById("dashboardCleanliness").value = document.getElementById("cleanliness").value;
+        document.getElementById("dashboardCommunication").value = document.getElementById("communication").value;
+        document.getElementById("dashboardSleep").value = document.getElementById("sleep").value;
+        document.getElementById("dashboardFriends").value = document.getElementById("friends").value;
+        document.getElementById("dashboardSmoking").value = document.getElementById("smoking").value;
+        document.getElementById("dashboardEnvironment").value = document.getElementById("environment").value;
+        document.getElementById("dashboardStudy").value = document.getElementById("study").value;
+        document.getElementById("dashboardRoommate").value = roommateName;
+    }
+
+    // =========================================================================
+    // UI RENDERING — forms, cards, accept / reject screens
+    // =========================================================================
+
+    const quizForm = document.getElementById("quizForm");
+    const formAlert = document.getElementById("formAlert");
+    const scoreResult = document.getElementById("scoreResult");
+    const resultsFeed = document.getElementById("resultsFeed");
+    const rejectedState = document.getElementById("rejectedState");
+    const acceptedState = document.getElementById("acceptedState");
+
+    let quizSubmitted = false;
+    let userProfile = null;
+    let rejectedIds = [];
+    let pendingMatch = null;
+
+    function showFormError(message) {
+        formAlert.textContent = message;
+        formAlert.classList.remove("d-none");
+        formAlert.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+
+    function hideFormError() {
+        formAlert.classList.add("d-none");
+        formAlert.textContent = "";
+    }
+
+    function validateForm() {
+        const name = document.getElementById("name").value.trim();
+        const university = document.getElementById("university").value.trim();
+        const email = document.getElementById("email").value.trim().toLowerCase();
+
+        if (!name) {
+            showFormError("Please enter your name.");
+            document.getElementById("name").focus();
+            return false;
+        }
+        if (!university) {
+            showFormError("Please enter your university (KU or THI).");
+            document.getElementById("university").focus();
+            return false;
+        }
+        if (!email) {
+            showFormError("Please enter your student email.");
+            document.getElementById("email").focus();
+            return false;
+        }
+        if (!/^.+@(stud\.ku\.de|thi\.de)$/.test(email)) {
+            showFormError("Please use a valid student email ending in @stud.ku.de or @thi.de (e.g. anna@stud.ku.de).");
+            document.getElementById("email").focus();
+            return false;
+        }
+
+        hideFormError();
+        return true;
+    }
+
+    function formatScoreBadge(label, value) {
+        return `<span class="badge verified-badge">${label}: ${value}/5</span>`;
+    }
+
+    function buildProfileSummaryList(profile) {
+        return PROFILE_KEYS.map((key) =>
+            `<li>${PROFILE_LABELS[key]}: <strong>${profile[key]}/5</strong></li>`
+        ).join("");
+    }
+
+    function renderRoommateCard(roommate, options = {}) {
+        const {
+            isPrimary = false,
+            buttonLabel = "Send Match Request",
+            buttonClass = "match-request-btn"
+        } = options;
+
+        const card = document.createElement("article");
+        card.className = `roommate-card${isPrimary ? " border border-success border-2" : ""}`;
+
+        card.innerHTML = `
+            <div class="roommate-score">${roommate.matchPercent}%</div>
+            <div class="avatar-placeholder" aria-hidden="true">${roommate.initials}</div>
+            <h3>${roommate.name}${isPrimary ? ' <span class="badge bg-success ms-1">Best Match</span>' : ""}</h3>
+            <div class="trust-row">
+                ${roommate.tags.map((tag) => `<span class="badge verified-badge">${tag}</span>`).join("")}
+            </div>
+            <div class="trust-row mt-2">
+                ${formatScoreBadge("Clean", roommate.scores.cleanliness)}
+                ${formatScoreBadge("Sleep", roommate.scores.sleep)}
+                ${formatScoreBadge("Social", roommate.scores.social)}
+                ${formatScoreBadge("Study", roommate.scores.study)}
+            </div>
+            <p>${roommate.summary}</p>
+            <button class="btn btn-teal ${buttonClass}" type="button" data-roommate-id="${roommate.id}">
+                ${buttonLabel}
+            </button>
+        `;
+
+        return card;
+    }
+
+    function updateScoreDisplay(primaryMatch) {
+        const quizScore = calculateQuizScore(userProfile);
+
+        document.getElementById("scoreText").textContent = `Your compatibility score: ${quizScore}%`;
+        document.getElementById("rankingText").textContent = getRankingLabel(quizScore);
+        document.getElementById("bestMatchText").textContent =
+            `Best roommate for you: ${primaryMatch.name} (${primaryMatch.matchPercent}% similar lifestyle)`;
+        document.getElementById("profileSummary").innerHTML = buildProfileSummaryList(userProfile);
+    }
+
+    function bindMatchButtons(container) {
+        container.querySelectorAll(".match-request-btn, .retry-match-btn").forEach((button) => {
+            button.addEventListener("click", () => {
+                handleMatchRequest(button.dataset.roommateId, button);
+            });
+        });
+    }
+
+    function renderMatchResults() {
+        const ranked = rankRoommates(userProfile, rejectedIds);
+        if (ranked.length === 0) {
+            showFormError("No roommates left to match. Refresh the page to start again.");
+            return;
+        }
+
+        const primaryMatch = ranked[0];
+        const primaryContainer = document.getElementById("primaryMatchContainer");
+        const allMatchesGrid = document.getElementById("allMatchesGrid");
+
+        primaryContainer.innerHTML = "";
+        allMatchesGrid.innerHTML = "";
+
+        primaryContainer.appendChild(renderRoommateCard(primaryMatch, { isPrimary: true }));
+        ranked.slice(1).forEach((roommate) => {
+            allMatchesGrid.appendChild(renderRoommateCard(roommate));
+        });
+
+        bindMatchButtons(primaryContainer);
+        bindMatchButtons(allMatchesGrid);
+
+        updateScoreDisplay(primaryMatch);
+        scoreResult.classList.remove("d-none");
+        resultsFeed.classList.remove("d-none");
+    }
+
+    function renderAlternatives() {
+        const alternativesGrid = document.getElementById("alternativesGrid");
+        const alternatives = rankRoommates(userProfile, rejectedIds).slice(0, 3);
+
+        alternativesGrid.innerHTML = "";
+
+        if (alternatives.length === 0) {
+            alternativesGrid.innerHTML =
+                '<p class="text-muted">No more roommates available. Refresh the page to try again.</p>';
+            return;
+        }
+
+        alternatives.forEach((roommate) => {
+            alternativesGrid.appendChild(
+                renderRoommateCard(roommate, {
+                    buttonLabel: "Select & Try Match Again",
+                    buttonClass: "retry-match-btn"
+                })
+            );
+        });
+
+        bindMatchButtons(alternativesGrid);
+        rejectedState.classList.remove("d-none");
+        rejectedState.scrollIntoView({ behavior: "smooth" });
+    }
+
+    function showAcceptedState(roommate) {
+        copyQuizDataToDashboard(roommate.name);
+        saveSessionCookies(userProfile, roommate.name, roommate.matchPercent);
+        rejectedState.classList.add("d-none");
+        acceptedState.classList.remove("d-none");
+        acceptedState.scrollIntoView({ behavior: "smooth" });
+    }
+
+    function handleMatchRequest(roommateId, button) {
+        if (pendingMatch) return;
+
+        const roommate = rankRoommates(userProfile, rejectedIds).find((r) => r.id === roommateId);
+        if (!roommate) return;
+
+        pendingMatch = roommateId;
+        button.disabled = true;
+        button.innerHTML =
+            '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Waiting for reply...';
+
+        setTimeout(() => {
+            const status = simulateRoommateResponse(roommate, roommate.matchPercent);
+            pendingMatch = null;
+
+            if (status === "ACCEPTED") {
+                button.textContent = "Accepted!";
+                showAcceptedState(roommate);
+            } else {
+                rejectedIds.push(roommate.id);
+                button.textContent = "Declined";
+                button.classList.replace("btn-teal", "btn-outline-secondary");
+                renderAlternatives();
+            }
+        }, 2000);
+    }
+
+    function onQuizAnswerChange() {
+        if (!quizSubmitted) return;
+        userProfile = buildUserProfile();
+        rejectedState.classList.add("d-none");
+        acceptedState.classList.add("d-none");
+        renderMatchResults();
+    }
+ quizForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!validateForm()) return;
+
+        quizSubmitted = true;
+        userProfile = buildUserProfile();
+        rejectedIds = [];
+        pendingMatch = null;
+
+        rejectedState.classList.add("d-none");
+        acceptedState.classList.add("d-none");
+
+        renderMatchResults();
+        scoreResult.scrollIntoView({ behavior: "smooth" });
+    });
+
+    ["cleanliness", "communication", "sleep", "friends", "smoking", "environment", "study"].forEach((fieldId) => {
+        document.getElementById(fieldId).addEventListener("change", onQuizAnswerChange);
+    });
+
+    const navUserName = document.getElementById("navUserName");
+    const nameInput = document.getElementById("name");
+
+    function updateNavUserName() {
+        const name = nameInput.value.trim();
+        navUserName.textContent = name || "Guest";
+    }
+
+    nameInput.addEventListener("input", updateNavUserName);
+
+    // Restore name from cookie if returning from dashboard
+    const savedName = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("roomconnect_name="));
+    if (savedName) {
+        const cookieName = decodeURIComponent(savedName.split("=")[1]);
+        if (cookieName && !nameInput.value.trim()) {
+            nameInput.value = cookieName;
+        }
+    }
+    updateNavUserName();
+})();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

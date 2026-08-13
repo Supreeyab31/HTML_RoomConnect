@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="RoomConnect trust safety verification privacy">
+  <title>RoomConnect | Trust & Safety</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand brand-mark" href="index.html">
+        <img src="roomconnect_nav.svg" alt="RoomConnect logo" class="brand-logo-full">
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <div class="navbar-nav ms-auto align-items-lg-center">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="quiz.html">Quiz</a>
+          <a class="nav-link" href="lessons.php">Shared Dashboard</a>
+          <a class="nav-link active" href="trust-safety.html">Trust</a>
+          <a class="nav-link" href="pricing.html">Pricing</a>
+          <a class="nav-link" href="about.html">About</a>
+          <div class="nav-user-inline ms-lg-3 mt-3 mt-lg-0">
+            <span class="nav-user-dot"></span>
+            <span class="nav-user-inline-name" id="navUserName">Guest</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="section-padding bg-soft min-vh-100">
+    <div class="container">
+      <div class="content-card">
+        <h1>Trust &amp; Safety</h1>
+        <p class="lead">This page explains how RoomConnect tries to reduce scams and unsafe contact.</p>
+
+        <div class="beginner-grid mt-4">
+
+          <div class="simple-card card-link" data-bs-toggle="collapse" data-bs-target="#verifyContent">
+            <h2><i class="bi bi-shield-check"></i> Verification &amp; Identity Protection</h2>
+          </div>
+          <div id="verifyContent" class="collapse mt-2">
+            <div class="card card-body">
+              <p>RoomConnect verifies student identity using:</p>
+              <ul>
+                <li>University email authentication</li>
+                <li>Optional student ID upload</li>
+                <li>Account protection alerts</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="simple-card card-link" data-bs-toggle="collapse" data-bs-target="#listingContent">
+            <h2><i class="bi bi-house-check"></i> Room Listing Verification</h2>
+          </div>
+          <div id="listingContent" class="collapse mt-2">
+            <div class="card card-body">
+              <p>Listings are checked for:</p>
+              <ul>
+                <li>Fake or reused photos</li>
+                <li>Unrealistic prices</li>
+                <li>Non-student landlords</li>
+              </ul>
+              <p>Verified listings receive a green badge.</p>
+            </div>
+          </div>
+
+          <div class="simple-card card-link" data-bs-toggle="collapse" data-bs-target="#messagingContent">
+            <h2><i class="bi bi-chat-dots"></i> Secure Messaging</h2>
+          </div>
+          <div id="messagingContent" class="collapse mt-2">
+            <div class="card card-body">
+              <p>Messages are monitored for:</p>
+              <ul>
+                <li>Scam keywords</li>
+                <li>Phishing attempts</li>
+                <li>Harassment or abusive language</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="simple-card card-link" data-bs-toggle="collapse" data-bs-target="#scamContent">
+            <h2><i class="bi bi-exclamation-octagon"></i> Scam &amp; Fraud Prevention</h2>
+          </div>
+          <div id="scamContent" class="collapse mt-2">
+            <div class="card card-body">
+              <p>RoomConnect uses automated tools to detect:</p>
+              <ul>
+                <li>Advance-fee scams</li>
+                <li>Fake payment requests</li>
+                <li>Suspicious account behavior</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="simple-card card-link" data-bs-toggle="collapse" data-bs-target="#privacyContent">
+            <h2><i class="bi bi-lock"></i> Privacy &amp; Data Protection (GDPR)</h2>
+          </div>
+          <div id="privacyContent" class="collapse mt-2">
+            <div class="card card-body">
+              <p>Your data is protected under GDPR. RoomConnect:</p>
+              <ul>
+                <li>Does not sell personal data</li>
+                <li>Encrypts sensitive information</li>
+                <li>Allows full data deletion on request</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-5">
+         <a href="pricing.html" class="btn btn-teal btn-lg">
+    Continue to Pricing <i class="bi bi-arrow-right"></i>
+</a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>RoomConnect mockup for Digital Business Models &amp; Technologies.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const navUserName = document.getElementById("navUserName");
+      if (!navUserName) return;
+
+      const savedName = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("roomconnect_name="));
+
+      if (savedName) {
+        const name = decodeURIComponent(savedName.split("=")[1]);
+        if (name) navUserName.textContent = name;
+      }
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

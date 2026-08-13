@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RoomConnect Plans</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 
+    <style>
+        body {
+            background-color: #f7f8fc;
+        }
+
+        .section-padding {
+            padding: 70px 0;
+        }
+
+        .card {
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card-header {
+            font-weight: 700;
+        }
+
+        .list-group-item {
+            border: none;
+        }
+
+        .btn {
+            border-radius: 10px;
+        }
+    </style> -->
+
+    <style>
+        /* ===== RoomConnect Landing Style ===== */
+
+        body {
+            background: linear-gradient(180deg,
+                    #eaf9f8 0%,
+                    #f5fbfc 40%,
+                    #ffffff 100%);
+        }
+
+        /* Main heading */
+        .display-4 {
+            color: #123b70;
+            font-weight: 800;
+        }
+
+        /* Secondary text */
+        .lead,
+        .text-muted {
+            color: #5e6e84 !important;
+        }
+
+        /* Section title */
+        h2,
+        h3,
+        h5 {
+            color: #123b70;
+        }
+
+        /* Cards */
+        .card {
+            border-radius: 20px;
+            border: none;
+            background: #ffffff;
+            box-shadow: 0 8px 30px rgba(18, 59, 112, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(18, 59, 112, 0.12);
+        }
+
+        /* Premium card */
+        .border-green {
+            border: 3px solid #16a7ae !important;
+        }
+
+        /* Most Popular Badge */
+        .card-header {
+            background: #16a7ae !important;
+            color: white !important;
+            border: none;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* Free button */
+        .btn-outline-primary {
+            border-color: #16a7ae;
+            color: #16a7ae;
+        }
+
+        .btn-outline-primary:hover {
+            background: #16a7ae;
+            border-color: #16a7ae;
+            color: white;
+        }
+
+        /* Premium button */
+        .btn-primary {
+            background: #16a7ae !important;
+            border-color: #16a7ae !important;
+        }
+
+        .btn-primary:hover {
+            background: #138f95 !important;
+            border-color: #138f95 !important;
+        }
+
+        /* Price */
+        .display-5 {
+            color: #123b70;
+        }
+
+        /* Features */
+        .list-group-item {
+            color: #4b5d74;
+            font-weight: 500;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+
+        /* Why RoomConnect section */
+        section.mt-5 {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 24px;
+            padding: 40px;
+            margin-top: 80px !important;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Decorative title highlight */
+        /* .text-center.mb-5::before {
+    content: "Verified KU & THI student network";
+    display: inline-block;
+    background: rgba(22,167,174,.12);
+    color: #0f8b91;
+    border: 1px solid rgba(22,167,174,.25);
+    padding: 10px 20px;
+    border-radius: 14px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 0dvb;
+} */
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand brand-mark" href="index.html">
+                    <img src="roomconnect_nav.svg" alt="RoomConnect logo" class="brand-logo-full">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                    aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <div class="navbar-nav ms-auto align-items-lg-center">
+                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="quiz.html">Quiz</a>
+                        <a class="nav-link" href="lessons.php">Shared Dashboard</a>
+                        <a class="nav-link" href="trust-safety.html">Trust</a>
+                        <a class="nav-link active" href="pricing.html">Pricing</a>
+                        <a class="nav-link" href="about.html">About</a>
+                        <a class="btn btn-outline-primary-blue nav-login-btn ms-lg-3 mt-3 mt-lg-0" href="#">Student
+                            Login</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="section-padding min-vh-100">
+        <div class="container">
+
+            <!-- Page title -->
+            <div class="text-center mb-5">
+                <h1 class="display-4 fw-bold">Choose Your Plan</h1>
+
+                <p class="lead">
+                    Find your ideal roommate for free or unlock advanced matching tools.
+                </p>
+            </div>
+
+            <!-- Plans -->
+            <div class="row g-4 justify-content-center">
+
+                <!-- Free Plan -->
+                <div class="col-lg-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body text-center">
+                            <h3>Free</h3>
+                            <h2 class="display-5 fw-bold">€0</h2>
+
+                            <p class="text-muted">
+                                Perfect for getting started
+                            </p>
+
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item">✓ University email verification</li>
+                                <li class="list-group-item">✓ Lifestyle quiz</li>
+                                <li class="list-group-item">✓ Basic roommate recommendations</li>
+                                <li class="list-group-item">✓ Profile creation</li>
+                                <li class="list-group-item">✓ Limited chats</li>
+                            </ul>
+
+                            <a href="quiz.html" class="btn btn-outline-primary w-100">
+                                Start Free
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="col-lg-4">
+                    <div class="card h-100 shadow border-green">
+
+                        <div class="card-header bg-primary text-white text-center">
+                            MOST POPULAR
+                        </div>
+
+                        <div class="card-body text-center">
+                            <h3>Premium</h3>
+                            <h2 class="display-5 fw-bold">€5.99</h2>
+
+                            <p class="text-muted">
+                                per month
+                            </p>
+
+                            <div id="premium-default">
+                                <ul class="list-group list-group-flush mb-4">
+                                    <li class="list-group-item">✓ Advanced lifestyle filters</li>
+                                    <li class="list-group-item">✓ Unlimited matches</li>
+                                    <li class="list-group-item">✓ Compatibility insights</li>
+                                    <li class="list-group-item">✓ Profile boost</li>
+                                    <li class="list-group-item">✓ Priority visibility</li>
+                                    <li class="list-group-item">✓ Unlimited chats</li>
+                                    <li class="list-group-item">✓ Shared wishlist tools</li>
+                                </ul>
+
+                                <button onclick="showCheckout()" class="btn btn-primary w-100">
+                                    Upgrade Now
+                                </button>
+                            </div>
+
+                            <div id="premium-checkout" style="display: none; text-align: left;">
+                                <h5 class="mb-3 text-center">Checkout</h5>
+                                <form id="checkout-form" onsubmit="handleCheckout(event)">
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted fw-bold">Name on Card</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted fw-bold">Credit Card Number</label>
+                                        <input type="text" id="cc-number" class="form-control" placeholder="16 digits"
+                                            maxlength="16" oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                                            required>
+                                        <div id="cc-error" class="text-danger mt-1 fw-bold"
+                                            style="display: none; font-size: 0.875em;">Must be exactly 16 digits.</div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100 mb-2">Submit Payment</button>
+                                    <button type="button" onclick="hideCheckout()"
+                                        class="btn btn-outline-secondary w-100">Cancel</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Premium Plus Plan -->
+                <!-- <div class="col-lg-4">
+                <div class="card h-100 shadow-sm border-success">
+                    <div class="card-body text-center">
+                        <h3>Premium Plus</h3>
+                        <h2 class="display-5 fw-bold">€11.99</h2>
+
+                        <p class="text-muted">
+                            per month
+                        </p>
+
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item">✓ Everything in Premium</li>
+                            <li class="list-group-item">✓ Apartment recommendations</li>
+                            <li class="list-group-item">✓ Group roommate matching</li>
+                            <li class="list-group-item">✓ Priority support</li>
+                            <li class="list-group-item">✓ Application tracking</li>
+                            <li class="list-group-item">✓ Urgent search badge</li>
+                        </ul>
+
+                        <a href="#" class="btn btn-success w-100">
+                            Go Premium Plus
+                        </a>
+                    </div>
+                </div>
+            </div> -->
+
+            </div>
+
+            <!-- Additional information -->
+            <section class="mt-5 pt-4">
+                <h2 class="text-center mb-4">Why RoomConnect?</h2>
+
+                <div class="row text-center g-4">
+
+                    <div class="col-md-4">
+                        <h5>🏠 Housing Partners</h5>
+                        <p>Verified apartments and student housing referrals.</p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5>🎓 Universities</h5>
+                        <p>Housing support and onboarding services.</p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5>⭐ Featured Listings</h5>
+                        <p>Premium placement for landlords and providers.</p>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function showCheckout() {
+            document.getElementById('premium-default').style.display = 'none';
+            document.getElementById('premium-checkout').style.display = 'block';
+        }
+
+        function hideCheckout() {
+            document.getElementById('premium-checkout').style.display = 'none';
+            document.getElementById('premium-default').style.display = 'block';
+            document.getElementById('checkout-form').reset();
+            document.getElementById('cc-error').style.display = 'none';
+        }
+
+        function handleCheckout(event) {
+            event.preventDefault();
+            const ccInput = document.getElementById('cc-number').value;
+            const errorDiv = document.getElementById('cc-error');
+
+            if (ccInput.length === 16 && /^\d+$/.test(ccInput)) {
+                errorDiv.style.display = 'none';
+                // Show a simple alert for feedback before redirecting
+                alert('Payment successful! Redirecting to quiz...');
+                window.location.href = 'quiz.html';
+            } else {
+                errorDiv.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

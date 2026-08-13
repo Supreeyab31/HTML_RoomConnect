@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="RoomConnect, WFI,THI, roommate matching, student housing, Ingolstadt">
+    <title>RoomConnect | Student Roommate Matcher</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+        <a class="navbar-brand brand-mark" href="index.html">
+            <img src="roomconnect_nav.svg" alt="RoomConnect logo" class="brand-logo-full">
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+<div class="collapse navbar-collapse" id="mainNavbar">
+    <div class="navbar-nav ms-auto align-items-lg-center">
+        <a class="nav-link active" href="index.html">Home</a>
+        <a class="nav-link" href="quiz.html">Quiz</a>
+        <a class="nav-link" href="lessons.php">Shared Dashboard</a>
+        <a class="nav-link" href="trust-safety.html">Trust</a>
+        <a class="nav-link" href="pricing.html">Pricing</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="btn btn-outline-primary-blue nav-login-btn ms-lg-3 mt-3 mt-lg-0" href="#">Student Login</a>
+    </div>
+</div>
+    </div>
+</nav>
+
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <span class="badge trust-badge mb-3">Verified KU & THI student network</span>
+                        <h1>Find a compatible student roommate in Ingolstadt.</h1>
+                        <p class="lead">
+                            RoomConnect helps verified KU and THI students in Ingolstadt find better shared housing through one clear journey: verification, quiz, roommate acceptance, shared room selection, and landlord approval.
+                        </p>
+                        <div class="d-flex flex-wrap gap-3 mt-4">
+                            <a href="#wfi-gate" class="btn btn-teal btn-lg">Verify Email</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="hero-card">
+                            <div class="score-circle">99%</div>
+                            <h2>Success matching</h2>
+                            <p>
+                                Focuses on student verification, compatibility scores, and group approval
+                                instead of profile photos.
+                            </p>
+                            <div class="mini-metric">
+                                <span>1. Verification</span>
+                                <strong>KU/THI</strong>
+                            </div>
+                            <div class="mini-metric">
+                                <span>2. Quiz and mutual match</span>
+                                <strong>Accept</strong>
+                            </div>
+                            <div class="mini-metric">
+                                <span>3. Reserve shared room</span>
+                                <strong>Done</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="wfi-gate" class="section-padding bg-soft">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="content-card">
+                            <h2>Student Verification Gate</h2>
+                            <p>
+                                Enter a institutional student email before starting the quiz.
+                            </p>
+
+                            <form id="verificationForm" class="gate-form">
+                                <label for="studentEmail" class="form-label">Student email</label>
+                                <div class="input-group input-group-lg">
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        id="studentEmail"
+                                        placeholder="name@stud.ku.de or name@thi.de"
+                                        required
+                                    >
+                                    <button class="btn btn-teal" type="submit">Verify and Start Quiz</button>
+                                </div>
+                                <p id="emailMessage" class="form-message mt-3"></p>
+                            </form>
+
+                            <div class="support-note mt-4">
+                                <strong>Verification</strong>
+                                is the first safety step before matching.
+                                <a href="trust-safety.html">Read Trust &amp; Safety</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <h2 class="text-center mb-4">RoomConnect Milestones</h2>
+                <div class="pipeline-grid">
+                    <div class="pipeline-step">
+                        <span>1</span>
+                        <h3>Verification</h3>
+                        <p>Only verified KU and THI student emails can start.</p>
+                    </div>
+                    <div class="pipeline-step">
+                        <span>2</span>
+                        <h3>Quiz</h3>
+                        <p>Lifestyle data creates fairer matches.</p>
+                    </div>
+                    <div class="pipeline-step">
+                        <span>3</span>
+                        <h3>Match Acceptance</h3>
+                        <p>Both students agree before moving on.</p>
+                        <a href="lessons.php">Chat after acceptance</a>
+                    </div>
+                    <div class="pipeline-step">
+                        <span>4</span>
+                        <h3>Shared room Selection</h3>
+                        <p>The pair chooses a room together.</p>
+                        <a href="pricing.html">See simple pricing</a>
+                    </div>
+                    <div class="pipeline-step">
+                        <span>5</span>
+                        <h3>Landlord Approval</h3>
+                        <p>The verified 2-student group is accepted.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding bg-soft">
+            <div class="container">
+                <h2 class="text-center mb-4">Helpful Pages Around the Journey</h2>
+                <div class="support-grid">
+                    <a href="trust-safety.html" class="support-card">
+                        <h3>Trust &amp; Safety</h3>
+                        <p>Best placed at verification because students need confidence before entering the platform.</p>
+                    </a>
+
+                    <a href="lessons.php" class="support-card">
+                        <h3>Matched-Roommate Chat</h3>
+                        <p>Best placed after match acceptance, where both students can agree on budget and room choice.</p>
+                    </a>
+
+                    <a href="pricing.html" class="support-card">
+                        <h3>Pricing</h3>
+                        <p>Best placed before room reservation because the value is clearer after seeing the matching process.</p>
+                    </a>
+
+                    <a href="about.html" class="support-card">
+                        <h3>About / Vision</h3>
+                        <p>Best placed near the end for users who want to understand why RoomConnect exists.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>RoomConnect for Digital Business Models & Technologies.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Beginner-friendly front-end validation for the mock verification gate.
+        document.getElementById("verificationForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            var emailInput = document.getElementById("studentEmail");
+            var message = document.getElementById("emailMessage");
+            var email = emailInput.value.trim().toLowerCase();
+
+            if (email.endsWith("@stud.ku.de") || email.endsWith("@thi.de")) {
+                message.textContent = "Verified. Redirecting to the compatibility quiz...";
+                message.className = "form-message success mt-3";
+
+                setTimeout(function () {
+                    window.location.href = "quiz.html";
+                }, 900);
+            } else {
+                message.textContent = "Please use a valid student email ending in @stud.ku.de or @thi.de.";
+                message.className = "form-message error mt-3";
+            }
+        });
+    </script>
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</body>
+</html>

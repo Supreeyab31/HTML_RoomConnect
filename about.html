@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="RoomConnect mission, Ingolstadt student housing, KU THI roommate matching">
+    <title>RoomConnect | About</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand brand-mark" href="index.html">
+                <img src="roomconnect_nav.svg" alt="RoomConnect logo" class="brand-logo-full">
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+<div class="collapse navbar-collapse" id="mainNavbar">
+    <div class="navbar-nav ms-auto align-items-lg-center">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="quiz.html">Quiz</a>
+        <a class="nav-link" href="lessons.php">Shared Dashboard</a>
+        <a class="nav-link" href="trust-safety.html">Trust</a>
+        <a class="nav-link" href="pricing.html">Pricing</a>
+        <a class="nav-link active" href="about.html">About</a>
+        <div class="nav-user-inline ms-lg-3 mt-3 mt-lg-0">
+            <span class="nav-user-dot"></span>
+            <span class="nav-user-inline-name" id="navUserName">Guest</span>
+        </div>
+    </div>
+</div>
+        </div>
+    </nav>
+
+    <main class="section-padding bg-soft min-vh-100">
+        <div class="container">
+            <div class="about-intro">
+                <span class="about-kicker">About RoomConnect</span>
+
+                <h1>Why RoomConnect exists</h1>
+
+                <p class="lead">
+                    Finding the right roommate in Ingolstadt should feel safe, informed, and compatible — not random. RoomConnect was created for KU and THI students in Ingolstadt who are looking for a more trustworthy and structured way to find shared housing. It supports not only new students arriving in the city, but also those who already live, need a new flatmate after someone moves out, or want to change their current housing situation. At the same time, it also creates value for landlords by helping them connect with more reliable, better-matched, and potentially longer-term student tenants.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="simple-card h-100">
+                        <h2>The challenge</h2>
+                        <p>
+                            Student housing decisions are often made quickly and with limited information. New students may not know which housing is trustworthy, while existing members may struggle to find a compatible new roommate when a room becomes available. Landlords face a similar problem: they often have to choose tenants with very little insight into compatibility, reliability, or whether the shared living situation is likely to remain stable.
+                        </p>
+                        <p class="mb-0">
+                            In both cases, a poor match can lead to stress, discomfort, and avoidable conflict. Shared housing is not only about finding a free room — it is about finding the right people and the right living situation.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="simple-card h-100">
+                        <h2>Our approach</h2>
+                        <p>
+                            RoomConnect takes a more structured and student-centered approach to shared housing. Instead of relying only on first impressions or random messages, the platform combines verified student access, lifestyle preferences, and compatibility-based matching.
+                        </p>
+                        <p class="mb-0">
+                            The goal is to support better better housing decisions not only for students searching for a housing and existing members searching for the right new roommate, but also for landlords who want more stable, trustworthy, and better-matched tenants.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-4">
+                <div class="col-md-4">
+                    <div class="simple-card value-card h-100">
+                        <h2>Verified</h2>
+                        <p class="mb-0">
+                            RoomConnect is designed as a student-focused housing network for Ingolstadt, supporting more trustworthy connections across KU and THI.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="simple-card value-card h-100">
+                        <h2>Compatible</h2>
+                        <p class="mb-0">
+                            The platform considers lifestyle preferences and daily living habits, so matches are based on fit, not only room availability.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="simple-card value-card h-100">
+                        <h2>Flexible</h2>
+                        <p class="mb-0">
+                            RoomConnect supports different student situations: arriving in Ingolstadt for the first time, replacing a roommate, or looking for a better housing match.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="core-message mt-4">
+                <strong>Our vision:</strong>
+                We want to build a safer and more transparent student housing network for Ingolstadt — one where roommate and housing decisions are based on trust, compatibility, and mutual choice.
+            </div>
+
+            <a href="index.html" class="btn btn-teal btn-lg mt-4">Back to Home</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>RoomConnect mockup for Digital Business Models &amp; Technologies.</p>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            const navUserName = document.getElementById("navUserName");
+            if (!navUserName) return;
+
+            const savedName = document.cookie
+                .split("; ")
+                .find((row) => row.startsWith("roomconnect_name="));
+
+            if (savedName) {
+                const name = decodeURIComponent(savedName.split("=")[1]);
+                if (name) navUserName.textContent = name;
+            }
+        })();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
